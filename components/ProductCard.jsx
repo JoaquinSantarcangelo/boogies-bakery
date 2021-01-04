@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const Card = ({ i }) => {
+const ProductCard = ({ product, i }) => {
   const variantsCard = {
     hidden: { width: "0%" },
     visible: {
@@ -44,4 +44,4 @@ const Card = ({ i }) => {
     ></motion.div>
   );
 };
-export default Card;
+export default ProductCard;

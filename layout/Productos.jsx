@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Card from "../components/Card";
+import ProductCard from "../components/ProductCard";
 import VanillaTilt from "vanilla-tilt";
 
 const variants = {
@@ -58,7 +58,7 @@ const Productos = () => {
       <div className="content">
         <div className="cards">
           {products.map((p, i) => {
-            return <Card product={p} i={i} />;
+            return <ProductCard product={p} i={i} />;
           })}
         </div>
       </div>

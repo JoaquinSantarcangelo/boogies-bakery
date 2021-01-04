@@ -17,10 +17,11 @@
             &::before
                 content: "Comprar"
                 position: absolute
-                transform: scale(1.6)
+                transform: scale(2)
                 color: transparent
                 -webkit-text-stroke: 2px white
                 opacity: 0.05
+                left: -0.1em
 
     .content
         flex: 0.7
@@ -34,7 +35,38 @@
             .card
                 width: 100%
                 background-color: $cream
-                height: 18em
-                border-radius: 0.2em
+                height: 20em
+                border-radius: 0.4em
+                overflow: hidden
                 transition: all 0.4s ease
-            
+                position: relative
+                display: flex
+                align-items: center
+                justify-content: center
+                .info-box
+                    position: absolute
+                    z-index: 100
+                    background-color: $dark
+                    color: $cream
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    justify-content: center
+                    padding: 0.4em 2em
+                    bottom: 0.2em
+                    width: fit-content
+                    border-radius: 0.4em
+                    opacity: 0
+                    transition: all 0.4s ease
+                    .name
+                        font-weight: 600
+                        font-size: 1.4em
+                    .dir
+                        font-size: 1.2em
+                    &:hover
+                        transform: scale(1.05)
+                        cursor: pointer
+                &:hover
+                    .info-box
+                        opacity: 100
+                        bottom: 1em

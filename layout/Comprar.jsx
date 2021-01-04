@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Card from "../components/Card";
+import ComprarCard from "../components/ComprarCard";
 import VanillaTilt from "vanilla-tilt";
 
 const variants = {
@@ -26,10 +26,34 @@ const variants = {
 };
 
 const puntosDeVenta = [
-  { nombre: "Pan de Papa" },
-  { nombre: "Slider de Papa" },
-  { nombre: "Pan de Papa", desc: "Con semillas de sésamo" },
-  { nombre: "Pan de Pancho" },
+  {
+    id: 1,
+    position: { lat: -34.8795934, lng: -58.0517832 },
+    name: "El Arca Picadas",
+    dir: "Cantilo y 21",
+    img: "/assets/img/elArca.jpg",
+  },
+  {
+    id: 2,
+    position: { lat: -34.8922761, lng: -58.0215347 },
+    name: "Santa Elena",
+    dir: "25 esquina 501",
+    img: "/assets/img/santaElena.jpg",
+  },
+  {
+    id: 3,
+    position: { lat: -34.89214, lng: -57.9804819 },
+    name: "Don Emilio",
+    dir: "7 esquina 522",
+    img: "/assets/img/donEmilio.jpg",
+  },
+  {
+    id: 4,
+    position: { lat: -34.9258519, lng: -57.9720938 },
+    name: "El Almacen de Fiambres",
+    dir: "44 e/ 23 y24",
+    img: "/assets/img/almacenDeFiambres.jpg",
+  },
 ];
 
 const Comprar = () => {
@@ -58,7 +82,7 @@ const Comprar = () => {
       <div className="content">
         <div className="cards">
           {puntosDeVenta.map((p, i) => {
-            return <Card product={p} i={i} />;
+            return <ComprarCard key={p.id} product={p} i={i} />;
           })}
         </div>
       </div>
