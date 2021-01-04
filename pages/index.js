@@ -5,14 +5,19 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //Components
 import Navbar from "../components/Navbar";
 
+
 //Layout
 import HomeC from "../layout/Home";
 import Nosotros from "../layout/Nosotros";
 import Productos from "../layout/Productos";
 import Comprar from "../layout/Comprar";
 import Contacto from "../layout/Contacto";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  useEffect(() => {}, []);
+  const [activeLink, setActiveLink] = useState(null);
+
   return (
     <>
       <Head>
@@ -20,7 +25,7 @@ export default function Home() {
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
       <motion.div
-        initial={{ x: "-100vw"}}
+        initial={{ x: "-100vw" }}
         animate={{ x: "0vw" }}
         transition={{
           when: "beforeChildren",
@@ -37,7 +42,7 @@ export default function Home() {
               render={({ location }) => (
                 <AnimatePresence exitBeforeEnter>
                   <Switch location={location} key={location.pathname}>
-                    <Route path="/" exact component={HomeC}></Route>
+                    <Route exact path="/" component={HomeC}></Route>
                     <Route path="/nosotros" component={Nosotros}></Route>
                     <Route path="/productos" component={Productos}></Route>
                     <Route path="/comprar" component={Comprar}></Route>

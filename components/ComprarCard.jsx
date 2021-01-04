@@ -2,6 +2,8 @@ import React, { useEffect, useState, useCallback } from "react";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import CloseIcon from "@material-ui/icons/Close";
+import Close from "@material-ui/icons/Close";
 
 const containerStyle = {
   width: "100%",
@@ -50,6 +52,7 @@ const Card = ({ product, i }) => {
       },
     },
   };
+
   //Animation InView Hooks
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -62,6 +65,8 @@ const Card = ({ product, i }) => {
     }
   }, [inView]);
 
+  const [imageVisible, setImageVisible] = useState(false);
+
   return (
     <motion.div
       ref={ref}
@@ -71,10 +76,37 @@ const Card = ({ product, i }) => {
       exit="exit"
       className="card"
     >
-      <div className="info-box">
+      <div onClick={() => setImageVisible(true)} className="info-box">
         <div className="name">{product.name}</div>
         <div className="dir">{product.dir}</div>
       </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0, transition: {delay: 0} }}
+        transition={{delay: 4.2}}
+        animate={{ opacity: 1 }}
+        className="barrio"
+      >
+        {product.barrio}
+      </motion.div>
+      <AnimatePresence>
+        {imageVisible && (
+          <motion.div
+            style={{ backgroundImage: `url(${product.img})` }}
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="image"
+          >
+            <div
+              onClick={() => setImageVisible(false)}
+              className="close-button"
+            >
+              <CloseIcon />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <LoadScript googleMapsApiKey="AIzaSyBftuHNI5rqIIvGtLI90jKYanKdPZ25wu8">
         <GoogleMap
           mapContainerStyle={containerStyle}
@@ -86,6 +118,7 @@ const Card = ({ product, i }) => {
             <Marker
               icon="/assets/img/boogiesMarker.png"
               position={product.position}
+              onClick={() => setImageVisible(true)}
             ></Marker>
           </>
         </GoogleMap>
