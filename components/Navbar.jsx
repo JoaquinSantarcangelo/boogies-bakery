@@ -19,7 +19,9 @@ const Navbar = () => {
       className="navbar container"
     >
       <div className="logo">
-        <img src="assets/img/Logo.svg" alt="" />
+        <Link to="/">
+          <img src="assets/img/Logo.svg" alt="" />
+        </Link>
       </div>
       <div className="buttons">
         <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>

@@ -9,7 +9,7 @@ const variants = {
     rotateZ: [0, 0, -5],
     overflow: "none",
     transition: {
-      delay: 0.2,
+      delay: 0.4,
       duration: 1.6,
       ease: "easeInOut",
     },
