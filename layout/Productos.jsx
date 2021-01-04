@@ -18,7 +18,7 @@ const variants = {
     opacity: 0,
     rotateZ: 0,
     transition: {
-      delay: 0,
+      delay: 1,
       duration: 1,
       ease: "easeInOut",
     },

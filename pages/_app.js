@@ -3,6 +3,8 @@ import "../sass/index.sass";
 import "../sass/Navbar.sass";
 import "../sass/Home.sass";
 import "../sass/Productos.sass";
+import "../sass/Comprar.sass";
+
 
 
 function App({ Component, pageProps }) {

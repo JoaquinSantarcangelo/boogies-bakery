@@ -3,8 +3,9 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const variants = {
-  hidden: { opacity: 0, rotateZ: -5 },
+  hidden: { y: -20, opacity: 0, rotateZ: -5 },
   visible: {
+    y: 0,
     opacity: 1,
     rotateZ: [0, 0, -5],
     overflow: "none",
@@ -19,7 +20,7 @@ const variants = {
     rotateZ: 0,
     transition: {
       delay: 0,
-      duration: 1,
+      duration: 0.8,
       ease: "easeInOut",
     },
   },

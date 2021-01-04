@@ -8,17 +8,16 @@ const Card = ({ i }) => {
     visible: {
       width: "100%",
       transition: {
-        delay: 0.2*i,
+        delay: 0.4 + i / 2,
         ease: "easeInOut",
-        duration: 0.8,
+        duration: 0.4,
       },
     },
     exit: {
       width: "0%",
       transition: {
-        delay: 0.2*i,
-        ease: "easeOut",
-        duration: 1,
+        ease: "easeIn",
+        duration: 0.8,
       },
     },
   };
@@ -32,7 +31,7 @@ const Card = ({ i }) => {
     } else {
       controls.start("hidden");
     }
-  }, [controls, inView]);
+  }, [inView]);
 
   return (
     <motion.div
@@ -42,8 +41,7 @@ const Card = ({ i }) => {
       animate={controls}
       exit="exit"
       className="card"
-    >
-    </motion.div>
+    ></motion.div>
   );
 };
 export default Card;
