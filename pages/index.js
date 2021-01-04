@@ -20,7 +20,7 @@ export default function Home() {
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
       <motion.div
-        initial={{ x: "-100vw" }}
+        initial={{ x: "-100vw"}}
         animate={{ x: "0vw" }}
         transition={{
           when: "beforeChildren",

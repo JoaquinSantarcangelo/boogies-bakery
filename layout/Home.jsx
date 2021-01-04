@@ -1,18 +1,22 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const variants = {
-  hidden: { y: 150 },
+  hidden: { opacity: 0, rotateZ: -5 },
   visible: {
-    y: 0,
+    opacity: 1,
+    rotateZ: [0, 0, -5],
+    overflow: "none",
     transition: {
-      delay: 2.4,
-      duration: 1,
+      delay: 0.2,
+      duration: 1.6,
       ease: "easeInOut",
     },
   },
   exit: {
-    y: 150,
+    opacity: 0,
+    rotateZ: 0,
     transition: {
       delay: 0,
       duration: 1,
@@ -22,20 +26,32 @@ const variants = {
 };
 
 const Home = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView]);
+
   return (
     <div className="home container">
       <div className="texts-wrapper">
-        <div className="title">
+        <motion.div className="title">
           <motion.h1
+            ref={ref}
+            animate={controls}
             initial="hidden"
             exit="exit"
-            animate="visible"
             variants={variants}
           >
             #THEBESTPOTATOBREAD
           </motion.h1>
-        </div>
-        <div className="subtitle">
+        </motion.div>
+        {/* <div className="subtitle">
           <motion.h4
             initial="hidden"
             exit="exit"
@@ -44,7 +60,7 @@ const Home = () => {
           >
             Mas de 50 años de experiencia
           </motion.h4>
-        </div>
+        </div> */}
       </div>
     </div>
   );

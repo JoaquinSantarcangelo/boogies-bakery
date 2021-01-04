@@ -1,0 +1,30 @@
+@import index
+
+.productos
+    display: flex
+    height: 100%
+    .title
+        flex: 0.3
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        h1
+            color: $cream
+            font-family: "League Gothic"
+            font-style: italic
+            font-size: 7em
+            text-transform: uppercase
+    .content
+        flex: 0.7
+        .cards
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            flex-wrap: wrap
+            width: 100%
+            .card
+                margin: 0.4em
+                background-color: $cream
+                width: 45%
+                height: 20em
+                border-radius: 0.2em

@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <motion.div
       initial="hidden"
-      transition={{ delay: 2, duration: 0.8, ease: "easeInOut" }}
+      transition={{ delay: 2.2, duration: 0.8, ease: "easeInOut" }}
       exit="exit"
       animate="visible"
       variants={variants}
@@ -23,7 +23,7 @@ const Navbar = () => {
       </div>
       <div className="buttons">
         <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
-          <div className="button">Inicio</div>
+          <div className="button active">Inicio</div>
         </Link>
         <Link
           to="/nosotros"
