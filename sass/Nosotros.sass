@@ -2,6 +2,7 @@
 
 .nosotros
     display: flex
+    flex-direction: row
     height: 100%
     .title
         h1
@@ -10,3 +11,32 @@
 
     .content
         flex: 0.7
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        .card
+            margin-left: 2em
+            height: fit-content
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            padding: 2em
+            width: 80%
+            // background-color: #ececec10
+            h4
+                color: $cream
+                font-size: 1.8em
+                font-weight: 400
+                span
+                    font-weight: 600
+                &:first-child
+                    margin-bottom: 1em
+
+    @media screen and ( max-width: 900px )
+        flex-direction: column
+        .title
+            margin-left: -0.2em
+            display: flex
+            align-items: center
+            justify-content: center

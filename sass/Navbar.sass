@@ -19,12 +19,12 @@
         display: flex
         color: $cream
         .button
-            font-family: "Nunito Sans"
+            font-family: "Montserrat"
             font-size: 1.2em
             margin-left: 0.8em
             text-transform: uppercase
             transition: all 0.4s ease
-            font-weight: 100
+            font-weight: 300
             border-bottom: 2px solid transparent
             &:hover
                 transform: scale(1.05)
@@ -32,3 +32,8 @@
         .active
             border-bottom: 2px solid white
             border-width: 
+
+    @media screen and ( max-width: 900px )
+        .buttons
+            display: none
+        
