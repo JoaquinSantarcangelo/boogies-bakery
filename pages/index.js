@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //Components
 import Navbar from "../components/Navbar";
 
-
 //Layout
 import HomeC from "../layout/Home";
 import Nosotros from "../layout/Nosotros";
@@ -23,6 +22,11 @@ export default function Home() {
       <Head>
         <title>Boogie's Bakery</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/assets/fonts/LeagueGothic-Italic.otf" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap"
+        />
       </Head>
       <motion.div
         initial={{ x: "-100vw" }}
