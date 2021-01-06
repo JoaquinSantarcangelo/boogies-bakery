@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <div className="home container">
       <div className="texts-wrapper">
-        <motion.div className="title">
+        <motion.div className="main-title">
           <motion.h1
             ref={ref}
             animate={controls}
